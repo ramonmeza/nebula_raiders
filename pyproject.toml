@@ -22,4 +22,12 @@ distribution = false
 
 [tool.pdm.scripts]
 reset="mpremote exec 'import machine; machine.reset()'"
-upload_lib="mpremote fs cp -r lib :"
+upload-lib="mpremote fs cp -r lib :"
+upload-boot.composite = [
+    "mpremote fs cp boot.py :boot.py",
+    "mpremote fs cp secrets.py :secrets.py"
+]
+upload.composite = [
+    "upload-boot",
+    "upload-lib",
+]

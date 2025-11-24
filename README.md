@@ -9,7 +9,7 @@ I want to learn more about embedded systems and embedded programming, specifical
 Based on these goals, I will be writing the drivers from scratch when I can. For example, the LCD class in `lib/lcd.py` is my own driver for the LCD1602 component that I've derived from many sources and the Waveshare and Hitachi datasheets.
 
 ## How-To
-- `pdm run upload_lib` will upload all files in `lib/` directory to the connected microcontroller.
+- `pdm run upload-lib` will upload all files in `lib/` directory to the connected microcontroller.
 - `mpremote fs cp .\02_signal_booster\main.py :main.py` needs to be called to upload `main.py` from a specific source directory onto the microcontolller.
 - `pdm run reset` will soft reset the microcontroller.
 
