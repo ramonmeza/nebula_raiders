@@ -1,29 +1,34 @@
+# type: ignore
+from machine import Pin
 from utime import sleep
 
-from lib.lcd import LCD
 
+def main():
+    led_green: Pin = Pin(15, Pin.OUT)
+    led_red: Pin = Pin(14, Pin.OUT)
+    led_blue: Pin = Pin(13, Pin.OUT)
 
-def main() -> None:
-    lcd: LCD = LCD()
     try:
-        messages: list[str] = [
-            "Nebula Raider",
-            "Comm System OK",
-            "Incoming Msg",
-            "Awaiting Command",
-        ]
-
         while True:
-            for message in messages:
-                lcd.print(message)
-                sleep(3)
+            led_green.on()
+            sleep(1)
+            led_green.off()
+
+            led_red.on()
+            sleep(1)
+            led_red.off()
+
+            led_blue.on()
+            sleep(1)
+            led_blue.off()
 
     except KeyboardInterrupt:
         pass
 
     finally:
-        lcd.set_display(False)
-        lcd.set_backlight(False)
+        led_green.off()
+        led_red.off()
+        led_blue.off()
 
 
 if __name__ == "__main__":
