@@ -1,9 +1,10 @@
+# type: ignore
 import usocket as socket
 import ustruct as struct
 
 
 NTP_PACKET_SIZE: int = 48
-UNIX_OFFSET = 2208988800
+UNIX_OFFSET: int = 2208988800
 
 
 def get_server_time(hostname: str, port: int = 123) -> int:
